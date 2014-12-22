@@ -47,12 +47,13 @@
     <StartArguments>/rootsuffix Roslyn</StartArguments>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Analyzers\Jiro.CodeAnalysis.csproj">
+    <ProjectReference Include="..\Jiro.CodeAnalysis\Jiro.CodeAnalysis.csproj">
       <Project>{EC4CEF48-83B0-49D0-8C52-5EA5A7A4D22B}</Project>
       <Name>Jiro.CodeAnalysis</Name>
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>

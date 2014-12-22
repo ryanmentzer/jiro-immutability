@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22310.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis", "Analyzers\Analyzers\Jiro.CodeAnalysis.csproj", "{EC4CEF48-83B0-49D0-8C52-5EA5A7A4D22B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis", "Jiro.CodeAnalysis\Jiro.CodeAnalysis.csproj", "{EC4CEF48-83B0-49D0-8C52-5EA5A7A4D22B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ACA9AD3E-48FD-4668-AE25-CE397377E717}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis.Test", "Analyzers\Analyzers.Test\Jiro.CodeAnalysis.Test.csproj", "{C57A6A06-CFB1-4827-BF32-DC5446DDD240}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis.Test", "Jiro.CodeAnalysis.Test\Jiro.CodeAnalysis.Test.csproj", "{C57A6A06-CFB1-4827-BF32-DC5446DDD240}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis.Vsix", "Analyzers\Analyzers.Vsix\Jiro.CodeAnalysis.Vsix.csproj", "{27860F59-8CEB-4E44-A23E-C7E46BF4FBF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis.Vsix", "Jiro.CodeAnalysis.Vsix\Jiro.CodeAnalysis.Vsix.csproj", "{27860F59-8CEB-4E44-A23E-C7E46BF4FBF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
