@@ -6,7 +6,7 @@
 
     internal static class WorkspaceFactory
     {
-        public static CompiledWorkspace Create(string code)
+        public static Workspace Create(string code)
         {
             var projectId = ProjectId.CreateNewId();
 
@@ -29,7 +29,7 @@
                     .AddDocument(documentId, "TestDocument.cs", code);
 
             return 
-                new CompiledWorkspace(
+                new Workspace(
                     solution,
                     solution.Projects.Single(),
                     solution.GetDocument(documentId));

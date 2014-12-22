@@ -4,13 +4,13 @@
     using Microsoft.CodeAnalysis.CodeFixes;
     using Microsoft.CodeAnalysis.Diagnostics;
 
-    internal class CompiledWorkspace
+    internal class Workspace
     {
         private readonly Solution solution;
         private readonly Project project;
         private readonly Document document;
 
-        internal CompiledWorkspace(Solution solution, Project project, Document document)
+        internal Workspace(Solution solution, Project project, Document document)
         {
             this.solution = solution;
             this.project = project;

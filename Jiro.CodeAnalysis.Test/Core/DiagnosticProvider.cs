@@ -6,7 +6,7 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    internal class DiagnosticProvider : IDiagnosticProvider
+    internal class DiagnosticProvider
     {
         private readonly Compilation compilation;
 
