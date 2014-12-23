@@ -55,6 +55,8 @@
     <Compile Include="Immutability\Types\Fields\ReadOnly\ReadOnlyFieldAnalyzer.cs" />
     <Compile Include="Immutability\Types\Fields\ReadOnly\ReadOnlyFieldFixer.cs" />
     <Compile Include="Immutability\Types\Fields\ReadOnly\Diagnostics\ReadOnlyFieldDiagnostic.cs" />
+    <Compile Include="Immutability\Types\Fields\Type\Diagnostics\ImmutableFieldTypeDiagnostic.cs" />
+    <Compile Include="Immutability\Types\Fields\Type\ImmutableFieldTypeAnalyzer.cs" />
     <Compile Include="Immutability\Types\Properties\Setters\PropertySetterAnalyzer.cs" />
     <Compile Include="Immutability\Types\Properties\Setters\PropertySetterFixer.cs" />
     <Compile Include="Immutability\Types\Properties\Setters\Ceremony\PropertySetterCodeFixProvider.cs" />
@@ -117,6 +119,7 @@
   <ItemGroup>
     <CodeAnalysisDictionary Include="Properties\CustomDictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if exist Diagnostic.nuspec if exist "$(SolutionDir)\packages\NuGet.CommandLine.2.8.2\tools\NuGet.exe" "$(SolutionDir)\packages\NuGet.CommandLine.2.8.2\tools\NuGet.exe" pack Diagnostic.nuspec -OutputDirectory .</PostBuildEvent>

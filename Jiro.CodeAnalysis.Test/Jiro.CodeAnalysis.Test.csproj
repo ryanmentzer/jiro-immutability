@@ -126,6 +126,7 @@
     <Compile Include="Core\Workspace.cs" />
     <Compile Include="Core\DiagnosticProvider.cs" />
     <Compile Include="Core\WorkspaceFactory.cs" />
+    <Compile Include="Immutability\Types\Fields\Type\ImmutableFieldTypeAnalyzerTests.cs" />
     <Compile Include="Immutability\Types\Fields\OnlyPrivateFieldsInStructs\OnlyPrivateFieldsInStructsAnalyzerTests.cs" />
     <Compile Include="Immutability\Types\Fields\OnlyPrivateFieldsInStructs\OnlyPrivateFieldsInStructsFixerTests.cs" />
     <Compile Include="Immutability\Types\Fields\ReadOnly\ReadOnlyFieldAnalyzerTests.cs" />

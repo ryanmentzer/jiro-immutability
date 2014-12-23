@@ -5,7 +5,7 @@
 
     internal sealed class PropertySetterDiagnostic
     {
-        internal const string Id = "RCM002";
+        internal const string Id = "jiro.2";
 
         internal static readonly DiagnosticDescriptor Descriptor =
             new DiagnosticDescriptor(

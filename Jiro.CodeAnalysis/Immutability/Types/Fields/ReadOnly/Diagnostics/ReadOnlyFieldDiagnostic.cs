@@ -5,7 +5,7 @@
 
     internal sealed class ReadOnlyFieldDiagnostic
     {
-        internal const string Id = "RCM001";
+        internal const string Id = "jiro.1";
 
         internal static readonly DiagnosticDescriptor Descriptor =
             new DiagnosticDescriptor(
