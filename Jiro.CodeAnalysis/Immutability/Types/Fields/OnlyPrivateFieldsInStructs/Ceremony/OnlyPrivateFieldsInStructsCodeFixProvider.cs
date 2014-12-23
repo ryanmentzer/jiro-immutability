@@ -7,9 +7,9 @@
     using Microsoft.CodeAnalysis.CSharp.Syntax;
 
     [ExportCodeFixProvider(OnlyPrivateInStructsDiagnostic.Id, LanguageNames.CSharp)]
-    public class OnlyPrivateFieldsInStructsCodeFixProvider : BaseCodeFixProvider<FieldDeclarationSyntax>
+    internal class OnlyPrivateFieldsInStructsCodeFixProvider : BaseCodeFixProvider<FieldDeclarationSyntax>
     {
-        public OnlyPrivateFieldsInStructsCodeFixProvider()
+        internal OnlyPrivateFieldsInStructsCodeFixProvider()
             : base(new DocumentRootFixContextProvider(), new OnlyPrivateFieldsInStructsFixer(), OnlyPrivateInStructsDiagnostic.Descriptors)
         {
             // noop

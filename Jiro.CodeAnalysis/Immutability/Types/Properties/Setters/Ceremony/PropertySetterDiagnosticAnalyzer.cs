@@ -6,9 +6,9 @@
     using Microsoft.CodeAnalysis.Diagnostics;
 
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class PropertySetterDiagnosticAnalyzer : BaseDiagnosticAnalyzer<IPropertySymbol>
+    internal class PropertySetterDiagnosticAnalyzer : BaseDiagnosticAnalyzer<IPropertySymbol>
     {
-        public PropertySetterDiagnosticAnalyzer()
+        internal PropertySetterDiagnosticAnalyzer()
             : base(new PropertySetterAnalyzer(), PropertySetterDiagnostic.Descriptors)
         {
             // noop

@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Jiro.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,6 @@
     <Compile Include="Fixing\BaseCodeFixProvider.cs" />
     <Compile Include="Analyzing\BaseDiagnosticAnalyzer.cs" />
     <Compile Include="Analyzing\EmptyDiagnostic.cs" />
-    <Compile Include="Fixing\DiagnosticIsEmptyExtension.cs" />
     <Compile Include="Fixing\IFixContext.cs" />
     <Compile Include="Fixing\IFixContextProvider.cs" />
     <Compile Include="Fixing\IFixer.cs" />
@@ -68,6 +67,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Jiro.ruleset" />
     <None Include="packages.config" />
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
@@ -113,6 +113,9 @@
     <Reference Include="System.Reflection.Metadata">
       <HintPath>..\packages\System.Reflection.Metadata.1.0.17-beta\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="Properties\CustomDictionary.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <PropertyGroup>

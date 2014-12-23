@@ -7,9 +7,9 @@
     using Microsoft.CodeAnalysis.CSharp.Syntax;
 
     [ExportCodeFixProvider(ReadOnlyFieldDiagnostic.Id, LanguageNames.CSharp)]
-    public class ReadOnlyFieldCodeFixProvider : BaseCodeFixProvider<FieldDeclarationSyntax>
+    internal class ReadOnlyFieldCodeFixProvider : BaseCodeFixProvider<FieldDeclarationSyntax>
     {
-        public ReadOnlyFieldCodeFixProvider()
+        internal ReadOnlyFieldCodeFixProvider()
             : base(new DocumentRootFixContextProvider(), new ReadOnlyFieldFixer(), ReadOnlyFieldDiagnostic.Descriptors)
         {
             // noop

@@ -6,9 +6,9 @@
     using Microsoft.CodeAnalysis.Diagnostics;
 
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class ReadOnlyFieldDiagnosticAnalyzer : BaseDiagnosticAnalyzer<IFieldSymbol>
+    internal class ReadOnlyFieldDiagnosticAnalyzer : BaseDiagnosticAnalyzer<IFieldSymbol>
     {
-        public ReadOnlyFieldDiagnosticAnalyzer()
+        internal ReadOnlyFieldDiagnosticAnalyzer()
             : base(new ReadOnlyFieldAnalyzer(), ReadOnlyFieldDiagnostic.Descriptors)
         {
             // noop

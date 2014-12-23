@@ -6,9 +6,9 @@
     using Microsoft.CodeAnalysis.Diagnostics;
 
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class OnlyPrivateFieldsInStructsDiagnosticAnalyzer : BaseDiagnosticAnalyzer<IFieldSymbol>
+    internal class OnlyPrivateFieldsInStructsDiagnosticAnalyzer : BaseDiagnosticAnalyzer<IFieldSymbol>
     {
-        public OnlyPrivateFieldsInStructsDiagnosticAnalyzer()
+        internal OnlyPrivateFieldsInStructsDiagnosticAnalyzer()
             : base(new OnlyPrivateFieldsInStructsAnalyzer(), OnlyPrivateInStructsDiagnostic.Descriptors)
         {
             // noop

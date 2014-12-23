@@ -6,6 +6,7 @@
     using Microsoft.CodeAnalysis.CSharp.Syntax;
     using System.Collections.Immutable;
     using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
     using System.Linq;
 
@@ -14,6 +15,7 @@
         private static ImmutableHashSet<SyntaxKind> AccessModifiers =
             ImmutableHashSet.Create<SyntaxKind>(SyntaxKind.PublicKeyword, SyntaxKind.ProtectedKeyword, SyntaxKind.InternalKeyword, SyntaxKind.PrivateKeyword);
 
+        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Whitespace(System.String,System.Boolean)")]
         public FixResult ApplyFix(FieldDeclarationSyntax field)
         {
             Debug.Assert(field != null, "field must not be null.");

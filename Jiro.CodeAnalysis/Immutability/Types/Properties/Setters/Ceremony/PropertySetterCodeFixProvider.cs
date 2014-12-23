@@ -7,9 +7,9 @@
     using Microsoft.CodeAnalysis.CSharp.Syntax;
 
     [ExportCodeFixProvider(PropertySetterDiagnostic.Id, LanguageNames.CSharp)]
-    public class PropertySetterCodeFixProvider : BaseCodeFixProvider<PropertyDeclarationSyntax>
+    internal class PropertySetterCodeFixProvider : BaseCodeFixProvider<PropertyDeclarationSyntax>
     {
-        public PropertySetterCodeFixProvider()
+        internal PropertySetterCodeFixProvider()
             : base(new DocumentRootFixContextProvider(), new PropertySetterFixer(), PropertySetterDiagnostic.Descriptors)
         {
             // noop

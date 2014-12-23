@@ -21,18 +21,21 @@
 
             var documentId = DocumentId.CreateNewId(projectId);
 
-            var solution =
-                new CustomWorkspace()
-                    .CurrentSolution
-                    .AddProject(projectInfo)
-                    .AddMetadataReference(projectId, AssemblyMetadata.CreateFromFile(typeof(object).Assembly.Location).GetReference(display: "mscorlib"))
-                    .AddDocument(documentId, "TestDocument.cs", code);
+            using (var workspace = new CustomWorkspace())
+            {
+                var solution =
+                    workspace
+                        .CurrentSolution
+                        .AddProject(projectInfo)
+                        .AddMetadataReference(projectId, AssemblyMetadata.CreateFromFile(typeof(object).Assembly.Location).GetReference(display: "mscorlib"))
+                        .AddDocument(documentId, "TestDocument.cs", code);
 
-            return 
-                new Workspace(
-                    solution,
-                    solution.Projects.Single(),
-                    solution.GetDocument(documentId));
+                return
+                    new Workspace(
+                        solution,
+                        solution.Projects.Single(),
+                        solution.GetDocument(documentId));
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.OnlyPrivateFieldsInStructs
 {
+    using Jiro.CodeAnalysis.Analyzing;
     using Jiro.CodeAnalysis.Fixing;
     using Jiro.CodeAnalysis.Immutability.Types.Fields.OnlyPrivateFieldsInStructs.Diagnostics;
     using Microsoft.CodeAnalysis;
@@ -11,11 +12,11 @@
     [TestClass]
     public class OnlyPrivateFieldsInStructsAnalyzerTests
     {
+        private static readonly IAnalyzer<IFieldSymbol> analyzer = new OnlyPrivateFieldsInStructsAnalyzer();
+
         [TestMethod]
         public void OnlyPrivateFieldsInStructsAnalyzer_Noops_ForAllAccessibilities_InAReferenceType()
         {
-            var analyzer = new OnlyPrivateFieldsInStructsAnalyzer();
-
             foreach (var accessibility in ListAccessibilities())
             {
                 var actual =
@@ -29,8 +30,6 @@
         [TestMethod]
         public void OnlyPrivateFieldsInStructsAnalyzer_Noops_ForAPrivateField_InAValueType()
         {
-            var analyzer = new OnlyPrivateFieldsInStructsAnalyzer();
-
             var actual =
                 analyzer.Analyze(
                     CreateField(Structure.Struct, Accessibility.Private));
@@ -41,8 +40,6 @@
         [TestMethod]
         public void OnlyPrivateFieldsInStructsAnalyzer_Diagnoses_NonPrivateAccessibilities_InAValueType()
         {
-            var analyzer = new OnlyPrivateFieldsInStructsAnalyzer();
-
             foreach (var accessibility in ListAccessibilities().Remove(Accessibility.Private))
             {
                 var field = CreateField(Structure.Struct, accessibility);

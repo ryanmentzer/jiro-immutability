@@ -23,6 +23,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -137,11 +139,10 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Jiro.CodeAnalysis\Jiro.CodeAnalysis.csproj">
-      <Project>{EC4CEF48-83B0-49D0-8C52-5EA5A7A4D22B}</Project>
+      <Project>{ec4cef48-83b0-49d0-8c52-5ea5a7a4d22b}</Project>
       <Name>Jiro.CodeAnalysis</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>

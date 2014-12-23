@@ -1,16 +1,24 @@
-﻿using System.Resources;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using System.Runtime.InteropServices;
+using System.Resources;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 [assembly: InternalsVisibleTo("Jiro.CodeAnalysis.Test")]
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
+
+[assembly: SuppressMessage("Microsoft.Design", "CA2210:AssembliesShouldHaveValidStrongNames")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", Target = "Jiro.CodeAnalysis.Analyzing")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", Target = "Jiro.CodeAnalysis.Fixing")]
+
+[assembly: CLSCompliant(false)]
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Jiro.CodeAnalysis")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Jiro is a thoughtful C# analyzer and fixer.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ryan Mentzer")]
 [assembly: AssemblyProduct("Jiro.CodeAnalysis")]
