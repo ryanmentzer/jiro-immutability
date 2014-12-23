@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0"?>
 <package>
   <metadata>
-    <id>Analyzers</id>
+    <id>Jiro.CodeAnalysis</id>
     <version>1.0.0.0</version>
-    <title>Analyzers</title>
-    <authors>Analyzers</authors>
-    <owners>Analyzers</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <title>Jiro.CodeAnalysis</title>
+    <authors>Ryan Mentzer</authors>
+    <owners>Ryan Mentzer</owners>
+    <!--<licenseUrl></licenseUrl>-->
+    <projectUrl>https://github.com/ryanmentzer/Jiro</projectUrl>
+    <!--<iconUrl></iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Analyzers</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright</copyright>
-    <tags>Tag1 Tag2</tags>
+    <description>Jiro is a thoughtful C# analyzer and fixer.</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright © 2014</copyright>
+    <tags>C# csharp lint linter roslyn analyzer fixer analysis</tags>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="" />
     </frameworkAssemblies>

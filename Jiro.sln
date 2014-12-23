@@ -14,6 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis.Test", "J
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis.Vsix", "Jiro.CodeAnalysis.Vsix\Jiro.CodeAnalysis.Vsix.csproj", "{27860F59-8CEB-4E44-A23E-C7E46BF4FBF1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C3889AA0-CEBB-41DD-99DD-87591B724A57}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
