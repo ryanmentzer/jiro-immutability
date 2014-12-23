@@ -4,10 +4,14 @@
     using Jiro.CodeAnalysis.Immutability.Types.Fields.Type.Diagnostics;
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.Diagnostics;
+    using System.Collections.Immutable;
     using System.Diagnostics;
 
     internal sealed class ImmutableFieldTypeAnalyzer : IAnalyzer<IFieldSymbol>
     {
+        private static readonly ImmutableHashSet<string> NamespaceBlacklist =
+            ImmutableHashSet.Create("System.Collections.Generic");
+
         public void Register(AnalysisContext context)
         {
             context.RegisterSymbolAction(this, SymbolKind.Field);
@@ -16,9 +20,9 @@
         public Diagnostic Analyze(IFieldSymbol field)
         {
             Debug.Assert(field != null, "field must not be null.");
-
+                       
             return
-                field.Type.TypeKind == TypeKind.Array ?
+                field.Type.TypeKind == TypeKind.Array || NamespaceBlacklist.Contains(field.Type.OriginalDefinition.ContainingNamespace.ToDisplayString()) ?
                 Diagnostic.Create(ImmutableFieldTypeDiagnostic.Descriptor, field.Locations[0], field.Name) :
                 EmptyDiagnostic.Create();
         }

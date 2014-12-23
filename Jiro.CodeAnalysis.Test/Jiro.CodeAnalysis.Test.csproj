@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AnalyzerAndFixerWorkspace.cs" />
+    <Compile Include="Core\AnalyzerWorkspace.cs" />
     <Compile Include="Core\StringFixProvider.cs" />
     <Compile Include="Core\Workspace.cs" />
     <Compile Include="Core\DiagnosticProvider.cs" />

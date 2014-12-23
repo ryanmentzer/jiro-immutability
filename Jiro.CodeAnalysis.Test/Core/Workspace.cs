@@ -26,5 +26,10 @@
                     analyzer, 
                     fixProvider);
         }
+
+        internal AnalyzerWorkspace Setup(DiagnosticAnalyzer analyzer)
+        {
+            return new AnalyzerWorkspace(this.project, analyzer);
+        }
     }
 }

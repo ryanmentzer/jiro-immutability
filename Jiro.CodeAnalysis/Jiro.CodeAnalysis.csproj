@@ -55,6 +55,7 @@
     <Compile Include="Immutability\Types\Fields\ReadOnly\ReadOnlyFieldAnalyzer.cs" />
     <Compile Include="Immutability\Types\Fields\ReadOnly\ReadOnlyFieldFixer.cs" />
     <Compile Include="Immutability\Types\Fields\ReadOnly\Diagnostics\ReadOnlyFieldDiagnostic.cs" />
+    <Compile Include="Immutability\Types\Fields\Type\Ceremony\ImmutableFieldTypeDiagnosticAnalyzer.cs" />
     <Compile Include="Immutability\Types\Fields\Type\Diagnostics\ImmutableFieldTypeDiagnostic.cs" />
     <Compile Include="Immutability\Types\Fields\Type\ImmutableFieldTypeAnalyzer.cs" />
     <Compile Include="Immutability\Types\Properties\Setters\PropertySetterAnalyzer.cs" />

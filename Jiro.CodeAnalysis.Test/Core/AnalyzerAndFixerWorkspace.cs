@@ -3,6 +3,7 @@
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.CodeFixes;
     using Microsoft.CodeAnalysis.Diagnostics;
+    using System.Collections.Immutable;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -23,6 +24,15 @@
             this.document = document;
             this.analyzer = analyzer;
             this.stringFixProvider = new StringFixProvider(document, codeFixProvider);
+        }
+
+        internal async Task<ImmutableArray<Diagnostic>> Diagnose()
+        {
+            var compilation = await this.project.GetCompilationAsync(CancellationToken.None);
+
+            return await
+                new DiagnosticProvider(compilation)
+                    .ListDiagnostics(this.analyzer);
         }
 
         internal async Task<string> ApplyFix()
