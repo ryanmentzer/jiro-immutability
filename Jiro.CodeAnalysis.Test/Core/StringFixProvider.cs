@@ -26,10 +26,14 @@
             this.codeFixProvider = codeFixProvider;
         }
 
-        internal async Task<ImmutableArray<string>> List(ImmutableArray<Diagnostic> diagnostics)
+        internal async Task<ImmutableArray<string>> List(ImmutableArray<Diagnostic> diagnostics, CancellationToken cancellationToken)
         {
             var actions = await 
-                ListCodeActions(this.codeFixProvider, this.document, diagnostics);
+                ListCodeActions(
+                    this.codeFixProvider, 
+                    this.document, 
+                    diagnostics, 
+                    cancellationToken);
 
             var changes = await
                 Task.WhenAll(actions.Select(x => ToString(x, this.document.Id)));
@@ -40,14 +44,15 @@
         private static async Task<IEnumerable<CodeAction>> ListCodeActions(
             CodeFixProvider codeFixProvider,
             Document document,
-            ImmutableArray<Diagnostic> diagnostics)
+            ImmutableArray<Diagnostic> diagnostics,
+            CancellationToken cancellationToken)
         {
             var result = new ConcurrentBag<CodeAction>();
 
             var tasks =
                 diagnostics
-                    .Select(x => ToCodeFixContext(x, document, result.Add))
-                    .Select(x => codeFixProvider.ComputeFixesAsync(x))
+                    .Select(x => ToCodeFixContext(x, document, result.Add, cancellationToken))
+                    .Select(codeFixProvider.ComputeFixesAsync)
                     .ToImmutableArray();
 
             await Task.WhenAll(tasks);
@@ -58,14 +63,15 @@
         private static CodeFixContext ToCodeFixContext(
             Diagnostic diagnostic,
             Document document,
-            Action<CodeAction> registration)
+            Action<CodeAction> registration,
+            CancellationToken cancellationToken)
         {
             return new
                 CodeFixContext(
                     document,
                     diagnostic,
                     (action, _) => registration(action),
-                    CancellationToken.None);
+                    cancellationToken);
         }
 
         private static async Task<string> ToString(CodeAction codeAction, DocumentId documentId)

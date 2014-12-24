@@ -4,6 +4,7 @@
     using Microsoft.CodeAnalysis.CodeFixes;
     using Microsoft.CodeAnalysis.Diagnostics;
     using System.Collections.Immutable;
+    using System.Diagnostics;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -15,11 +16,15 @@
         private readonly StringFixProvider stringFixProvider;
 
         internal AnalyzerAndFixerWorkspace(
-            Document document,
             Project project,
+            Document document,
             DiagnosticAnalyzer analyzer,
             CodeFixProvider codeFixProvider)
         {
+            Debug.Assert(project != null, "project must not be null");
+            Debug.Assert(document != null, "document must not be null");
+            Debug.Assert(analyzer != null, "analyzer must not be null");
+
             this.project = project;
             this.document = document;
             this.analyzer = analyzer;
@@ -35,22 +40,27 @@
                     .ListDiagnostics(this.analyzer);
         }
 
-        internal async Task<string> ApplyFix()
+        internal Task<string> ApplyFix()
         {
-            var compilation = await this.project.GetCompilationAsync(CancellationToken.None);
+            return this.ApplyFix(CancellationToken.None);
+        }
+
+        internal async Task<string> ApplyFix(CancellationToken cancellationToken)
+        {
+            var compilation = await this.project.GetCompilationAsync(cancellationToken);
 
             var diagnostics = await
                 new DiagnosticProvider(compilation)
                     .ListDiagnostics(this.analyzer);
 
-            var result = await this.stringFixProvider.List(diagnostics);
+            var result = await this.stringFixProvider.List(diagnostics, cancellationToken);
 
-            return result.Length > 0 ? result[0] : await ToString(this.document);
+            return result.Length > 0 ? result[0] : await OriginalSourceCode(this.document, cancellationToken);
         }
 
-        private static async Task<string> ToString(Document document)
+        private static async Task<string> OriginalSourceCode(Document document, CancellationToken cancellationToken)
         {
-            var result = await document.GetTextAsync(CancellationToken.None);
+            var result = await document.GetTextAsync(cancellationToken);
 
             return result.ToString();
         }

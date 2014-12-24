@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ACA9AD
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis.Test", "Jiro.CodeAnalysis.Test\Jiro.CodeAnalysis.Test.csproj", "{C57A6A06-CFB1-4827-BF32-DC5446DDD240}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis.Tests", "Jiro.CodeAnalysis.Test\Jiro.CodeAnalysis.Tests.csproj", "{C57A6A06-CFB1-4827-BF32-DC5446DDD240}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiro.CodeAnalysis.Vsix", "Jiro.CodeAnalysis.Vsix\Jiro.CodeAnalysis.Vsix.csproj", "{27860F59-8CEB-4E44-A23E-C7E46BF4FBF1}"
 EndProject

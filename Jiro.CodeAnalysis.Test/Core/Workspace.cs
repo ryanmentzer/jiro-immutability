@@ -19,12 +19,7 @@
 
         internal AnalyzerAndFixerWorkspace Setup(DiagnosticAnalyzer analyzer, CodeFixProvider fixProvider)
         {
-            return 
-                new AnalyzerAndFixerWorkspace(
-                    this.document, 
-                    this.project, 
-                    analyzer, 
-                    fixProvider);
+            return new AnalyzerAndFixerWorkspace(this.project, this.document, analyzer, fixProvider);
         }
 
         internal AnalyzerWorkspace Setup(DiagnosticAnalyzer analyzer)
