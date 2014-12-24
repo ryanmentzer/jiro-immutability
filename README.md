@@ -1,7 +1,7 @@
 Jiro
 ====
 
-Jiro is a thoughtful C# lexer/analyzer and fixer. 
+Jiro is a thoughtful C# linter/analyzer and fixer. 
 
 ####Immutability Rules
 * [Fields should have immutable references](Jiro.CodeAnalysis/Immutability/Fields/ReadOnly/readme.md)
