@@ -2,11 +2,10 @@
 {
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.CSharp;
-    using System.Linq;
 
     internal static class WorkspaceFactory
     {
-        public static Workspace Create(string code)
+        internal static Workspace Create(string code)
         {
             var projectId = ProjectId.CreateNewId();
 
@@ -29,11 +28,11 @@
                         .AddProject(projectInfo)
                         .AddMetadataReference(projectId, AssemblyMetadata.CreateFromFile(typeof(object).Assembly.Location).GetReference(display: "mscorlib"))
                         .AddDocument(documentId, "TestDocument.cs", code);
-
+                
                 return
                     new Workspace(
                         solution,
-                        solution.Projects.Single(),
+                        solution.GetProject(projectId),
                         solution.GetDocument(documentId));
             }
         }

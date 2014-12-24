@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Jiro.CodeAnalysis</RootNamespace>
-    <AssemblyName>Jiro.CodeAnalysis.Test</AssemblyName>
+    <AssemblyName>Jiro.CodeAnalysis.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

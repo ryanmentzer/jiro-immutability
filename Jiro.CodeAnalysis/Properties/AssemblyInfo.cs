@@ -5,7 +5,7 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: InternalsVisibleTo("Jiro.CodeAnalysis.Test")]
+[assembly: InternalsVisibleTo("Jiro.CodeAnalysis.Tests")]
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
 [assembly: SuppressMessage("Microsoft.Design", "CA2210:AssembliesShouldHaveValidStrongNames")]
