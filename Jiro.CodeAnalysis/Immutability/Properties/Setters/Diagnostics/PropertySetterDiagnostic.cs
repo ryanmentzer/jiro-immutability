@@ -10,7 +10,7 @@
         internal static readonly DiagnosticDescriptor Descriptor =
             new DiagnosticDescriptor(
                 "RCM002", 
-                "Properties must not have setters.", 
+                "Properties should not have setters.", 
                 "The '{0}' property setter should be removed.", 
                 "Immutability", 
                 DiagnosticSeverity.Warning, 

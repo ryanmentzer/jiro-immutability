@@ -10,7 +10,7 @@
         internal static readonly DiagnosticDescriptor Descriptor =
             new DiagnosticDescriptor(
                 Id,
-                "Use an immutable collection instead of an array or mutable collection.",
+                "Fields should use immutable collections instead of arrays or mutable collections.",
                 "Change the data type of '{0}' to corresponding type from System.Collections.Immutable.",
                 "Immutability",
                 DiagnosticSeverity.Warning,
