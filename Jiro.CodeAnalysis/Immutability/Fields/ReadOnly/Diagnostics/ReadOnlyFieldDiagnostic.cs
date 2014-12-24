@@ -15,7 +15,7 @@
                 "Immutability", 
                 DiagnosticSeverity.Warning, 
                 true, 
-                helpLink: "http://www.ryanmentzer.com");
+                helpLink: "https://github.com/ryanmentzer/Jiro/blob/master/Jiro.CodeAnalysis/Immutability/Fields/ReadOnly/readme.md");
 
         internal static readonly ImmutableArray<DiagnosticDescriptor> Descriptors = ImmutableArray.Create(Descriptor);
     }
