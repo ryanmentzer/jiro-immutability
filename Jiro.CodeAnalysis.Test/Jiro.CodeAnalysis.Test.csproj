@@ -127,13 +127,13 @@
     <Compile Include="Core\Workspace.cs" />
     <Compile Include="Core\DiagnosticProvider.cs" />
     <Compile Include="Core\WorkspaceFactory.cs" />
-    <Compile Include="Immutability\Types\Fields\UseImmutableCollections\UseImmutableCollectionsAnalyzerTests.cs" />
-    <Compile Include="Immutability\Types\Fields\OnlyPrivateFieldsInStructs\OnlyPrivateFieldsInStructsAnalyzerTests.cs" />
-    <Compile Include="Immutability\Types\Fields\OnlyPrivateFieldsInStructs\OnlyPrivateFieldsInStructsFixerTests.cs" />
-    <Compile Include="Immutability\Types\Fields\ReadOnly\ReadOnlyFieldAnalyzerTests.cs" />
-    <Compile Include="Immutability\Types\Fields\ReadOnly\ReadOnlyFieldFixerTests.cs" />
-    <Compile Include="Immutability\Types\Properties\Setters\PropertySetterAnalyzerTests.cs" />
-    <Compile Include="Immutability\Types\Properties\Setters\PropertySetterFixerTests.cs" />
+    <Compile Include="Immutability\Fields\UseImmutableCollections\UseImmutableCollectionsAnalyzerTests.cs" />
+    <Compile Include="Immutability\Fields\OnlyPrivateFieldsInStructs\OnlyPrivateFieldsInStructsAnalyzerTests.cs" />
+    <Compile Include="Immutability\Fields\OnlyPrivateFieldsInStructs\OnlyPrivateFieldsInStructsFixerTests.cs" />
+    <Compile Include="Immutability\Fields\ReadOnly\ReadOnlyFieldAnalyzerTests.cs" />
+    <Compile Include="Immutability\Fields\ReadOnly\ReadOnlyFieldFixerTests.cs" />
+    <Compile Include="Immutability\Properties\PropertySetterAnalyzerTests.cs" />
+    <Compile Include="Immutability\Properties\PropertySetterFixerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

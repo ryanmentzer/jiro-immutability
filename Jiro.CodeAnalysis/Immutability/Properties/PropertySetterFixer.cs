@@ -1,4 +1,4 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Properties.Setters
+﻿namespace Jiro.CodeAnalysis.Immutability.Properties
 {
     using Jiro.CodeAnalysis.Fixing;
     using Microsoft.CodeAnalysis;

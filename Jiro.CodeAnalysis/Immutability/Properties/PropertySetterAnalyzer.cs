@@ -1,7 +1,7 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Properties.Setters
+﻿namespace Jiro.CodeAnalysis.Immutability.Properties
 {
     using Jiro.CodeAnalysis.Analyzing;
-    using Jiro.CodeAnalysis.Immutability.Properties.Setters.Diagnostics;
+    using Jiro.CodeAnalysis.Immutability.Properties.Diagnostics;
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.Diagnostics;
     using System.Diagnostics;

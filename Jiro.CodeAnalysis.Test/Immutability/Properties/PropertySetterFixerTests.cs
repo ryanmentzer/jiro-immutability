@@ -1,7 +1,7 @@
-﻿namespace Jiro.CodeAnalysis.Immutablility.Types.Properties.Setters
+﻿namespace Jiro.CodeAnalysis.Immutablility.Types.Properties
 {
     using Jiro.CodeAnalysis.Core;
-    using Jiro.CodeAnalysis.Immutability.Properties.Setters.Ceremony;
+    using Jiro.CodeAnalysis.Immutability.Properties.Ceremony;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Threading.Tasks;
 

@@ -58,11 +58,11 @@
     <Compile Include="Immutability\Fields\UseImmutableCollections\Ceremony\UseImmutableCollectionsDiagnosticAnalyzer.cs" />
     <Compile Include="Immutability\Fields\UseImmutableCollections\Diagnostics\UseImmutableCollectionsDiagnostic.cs" />
     <Compile Include="Immutability\Fields\UseImmutableCollections\UseImmutableCollectionsAnalyzer.cs" />
-    <Compile Include="Immutability\Properties\Setters\PropertySetterAnalyzer.cs" />
-    <Compile Include="Immutability\Properties\Setters\PropertySetterFixer.cs" />
-    <Compile Include="Immutability\Properties\Setters\Ceremony\PropertySetterCodeFixProvider.cs" />
-    <Compile Include="Immutability\Properties\Setters\Diagnostics\PropertySetterDiagnostic.cs" />
-    <Compile Include="Immutability\Properties\Setters\Ceremony\PropertySetterDiagnosticAnalyzer.cs" />
+    <Compile Include="Immutability\Properties\PropertySetterAnalyzer.cs" />
+    <Compile Include="Immutability\Properties\PropertySetterFixer.cs" />
+    <Compile Include="Immutability\Properties\Ceremony\PropertySetterCodeFixProvider.cs" />
+    <Compile Include="Immutability\Properties\Diagnostics\PropertySetterDiagnostic.cs" />
+    <Compile Include="Immutability\Properties\Ceremony\PropertySetterDiagnosticAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
