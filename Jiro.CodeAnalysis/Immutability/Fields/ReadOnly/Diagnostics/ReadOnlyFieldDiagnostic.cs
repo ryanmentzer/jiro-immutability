@@ -5,12 +5,12 @@
 
     internal sealed class ReadOnlyFieldDiagnostic
     {
-        internal const string Id = "jiro.1";
+        internal const string Id = "JIRO-001";
 
         internal static readonly DiagnosticDescriptor Descriptor =
             new DiagnosticDescriptor(
                 Id, 
-                "Fields must be readonly.", 
+                "Fields should be readonly.", 
                 "The '{0}' field should be modified with the 'readonly' keyword.", 
                 "Immutability", 
                 DiagnosticSeverity.Warning, 

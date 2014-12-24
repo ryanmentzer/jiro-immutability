@@ -5,7 +5,7 @@
 
     internal sealed class OnlyPrivateInStructsDiagnostic
     {
-        internal const string Id = "jiro.3";
+        internal const string Id = "JIRO-003";
 
         internal static readonly DiagnosticDescriptor Descriptor =
             new DiagnosticDescriptor(

@@ -5,13 +5,13 @@
 
     internal sealed class UseImmutableCollectionsDiagnostic
     {
-        internal const string Id = "jiro.4";
-
+        internal const string Id = "JIRO-004";
+        
         internal static readonly DiagnosticDescriptor Descriptor =
             new DiagnosticDescriptor(
                 Id,
-                "Field types must not be mutable.",
-                "The data type of the '{0}' field should be changed to an immutable type.",
+                "Use an immutable collection instead of an array or mutable collection.",
+                "Change the data type of '{0}' to corresponding type from System.Collections.Immutable.",
                 "Immutability",
                 DiagnosticSeverity.Warning,
                 true,
