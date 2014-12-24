@@ -1,4 +1,4 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.OnlyPrivateFieldsInStructs
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.OnlyPrivateFieldsInStructs
 {
     using Jiro.CodeAnalysis.Fixing;
     using Microsoft.CodeAnalysis;

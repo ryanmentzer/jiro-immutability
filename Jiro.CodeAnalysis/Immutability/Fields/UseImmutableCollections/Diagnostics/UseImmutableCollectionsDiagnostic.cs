@@ -1,9 +1,9 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.Type.Diagnostics
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.UseImmutableCollections.Diagnostics
 {
     using Microsoft.CodeAnalysis;
     using System.Collections.Immutable;
 
-    internal sealed class ImmutableFieldTypeDiagnostic
+    internal sealed class UseImmutableCollectionsDiagnostic
     {
         internal const string Id = "jiro.4";
 

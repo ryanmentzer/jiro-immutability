@@ -1,7 +1,7 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.ReadOnly
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.ReadOnly
 {
     using Jiro.CodeAnalysis.Core;
-    using Jiro.CodeAnalysis.Immutability.Types.Fields.ReadOnly.Ceremony;
+    using Jiro.CodeAnalysis.Immutability.Fields.ReadOnly.Ceremony;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Threading.Tasks;
 

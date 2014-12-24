@@ -55,9 +55,9 @@
     <Compile Include="Immutability\Fields\ReadOnly\ReadOnlyFieldAnalyzer.cs" />
     <Compile Include="Immutability\Fields\ReadOnly\ReadOnlyFieldFixer.cs" />
     <Compile Include="Immutability\Fields\ReadOnly\Diagnostics\ReadOnlyFieldDiagnostic.cs" />
-    <Compile Include="Immutability\Fields\Type\Ceremony\ImmutableFieldTypeDiagnosticAnalyzer.cs" />
-    <Compile Include="Immutability\Fields\Type\Diagnostics\ImmutableFieldTypeDiagnostic.cs" />
-    <Compile Include="Immutability\Fields\Type\ImmutableFieldTypeAnalyzer.cs" />
+    <Compile Include="Immutability\Fields\UseImmutableCollections\Ceremony\UseImmutableCollectionsDiagnosticAnalyzer.cs" />
+    <Compile Include="Immutability\Fields\UseImmutableCollections\Diagnostics\UseImmutableCollectionsDiagnostic.cs" />
+    <Compile Include="Immutability\Fields\UseImmutableCollections\UseImmutableCollectionsAnalyzer.cs" />
     <Compile Include="Immutability\Properties\Setters\PropertySetterAnalyzer.cs" />
     <Compile Include="Immutability\Properties\Setters\PropertySetterFixer.cs" />
     <Compile Include="Immutability\Properties\Setters\Ceremony\PropertySetterCodeFixProvider.cs" />

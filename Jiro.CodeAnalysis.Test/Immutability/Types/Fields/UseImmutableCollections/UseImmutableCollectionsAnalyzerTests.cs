@@ -1,8 +1,8 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.Type
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.UseImmutableCollections
 {
     using Jiro.CodeAnalysis.Analyzing;
     using Jiro.CodeAnalysis.Core;
-    using Jiro.CodeAnalysis.Immutability.Types.Fields.Type.Ceremony;
+    using Jiro.CodeAnalysis.Immutability.Fields.UseImmutableCollections.Ceremony;
     using Microsoft.CodeAnalysis;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
@@ -10,9 +10,9 @@
     using System.Threading.Tasks;
 
     [TestClass]
-    public class ImmutableFieldTypeAnalyzerTests
+    public class UseImmutableCollectionsAnalyzerTests
     {
-        private static readonly IAnalyzer<IFieldSymbol> analyzer = new ImmutableFieldTypeAnalyzer();
+        private static readonly IAnalyzer<IFieldSymbol> analyzer = new UseImmutableCollectionsAnalyzer();
 
         [TestMethod]
         public void ImmutableFieldTypeAnalyzer_Diagnoses_Arrays()
@@ -30,7 +30,7 @@
             var actual = await
                 WorkspaceFactory
                     .Create(@"namespace Tests { using System.Collections.Generic; class Class1 { private List<int> foo; } }")
-                    .Setup(new ImmutableFieldTypeDiagnosticAnalyzer())
+                    .Setup(new UseImmutableCollectionsDiagnosticAnalyzer())
                     .Diagnose();
             
             Assert.IsTrue(actual.Length > 0);
@@ -42,7 +42,7 @@
             var actual = await
                 WorkspaceFactory
                     .Create(@"namespace Tests { using class Class1 { private in foo; } }")
-                    .Setup(new ImmutableFieldTypeDiagnosticAnalyzer())
+                    .Setup(new UseImmutableCollectionsDiagnosticAnalyzer())
                     .Diagnose();
 
             Assert.IsTrue(actual.Length == 0);

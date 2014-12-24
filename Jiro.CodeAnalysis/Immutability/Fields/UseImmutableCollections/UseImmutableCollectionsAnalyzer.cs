@@ -1,13 +1,13 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.Type
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.UseImmutableCollections
 {
     using Jiro.CodeAnalysis.Analyzing;
-    using Jiro.CodeAnalysis.Immutability.Types.Fields.Type.Diagnostics;
+    using Jiro.CodeAnalysis.Immutability.Fields.UseImmutableCollections.Diagnostics;
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.Diagnostics;
     using System.Collections.Immutable;
     using System.Diagnostics;
 
-    internal sealed class ImmutableFieldTypeAnalyzer : IAnalyzer<IFieldSymbol>
+    internal sealed class UseImmutableCollectionsAnalyzer : IAnalyzer<IFieldSymbol>
     {
         private static readonly ImmutableHashSet<string> NamespaceBlacklist =
             ImmutableHashSet.Create("System.Collections.Generic");
@@ -23,7 +23,7 @@
                        
             return
                 field.Type.TypeKind == TypeKind.Array || NamespaceBlacklist.Contains(field.Type.OriginalDefinition.ContainingNamespace.ToDisplayString()) ?
-                Diagnostic.Create(ImmutableFieldTypeDiagnostic.Descriptor, field.Locations[0], field.Name) :
+                Diagnostic.Create(UseImmutableCollectionsDiagnostic.Descriptor, field.Locations[0], field.Name) :
                 EmptyDiagnostic.Create();
         }
     }

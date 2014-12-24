@@ -1,4 +1,4 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.OnlyPrivateFieldsInStructs.Diagnostics
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.OnlyPrivateFieldsInStructs.Diagnostics
 {
     using Microsoft.CodeAnalysis;
     using System.Collections.Immutable;

@@ -1,4 +1,4 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.ReadOnly.Diagnostics
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.ReadOnly.Diagnostics
 {
     using Microsoft.CodeAnalysis;
     using System.Collections.Immutable;

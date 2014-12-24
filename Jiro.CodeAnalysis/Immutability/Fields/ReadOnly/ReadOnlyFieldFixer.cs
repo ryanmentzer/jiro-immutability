@@ -1,4 +1,4 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.ReadOnly
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.ReadOnly
 {
     using Jiro.CodeAnalysis.Fixing;
     using Microsoft.CodeAnalysis;

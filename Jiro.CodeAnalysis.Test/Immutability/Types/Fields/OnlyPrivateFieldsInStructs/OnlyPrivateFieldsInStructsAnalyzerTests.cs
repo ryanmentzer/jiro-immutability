@@ -1,8 +1,8 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.OnlyPrivateFieldsInStructs
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.OnlyPrivateFieldsInStructs
 {
     using Jiro.CodeAnalysis.Analyzing;
     using Jiro.CodeAnalysis.Fixing;
-    using Jiro.CodeAnalysis.Immutability.Types.Fields.OnlyPrivateFieldsInStructs.Diagnostics;
+    using Jiro.CodeAnalysis.Immutability.Fields.OnlyPrivateFieldsInStructs.Diagnostics;
     using Microsoft.CodeAnalysis;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;

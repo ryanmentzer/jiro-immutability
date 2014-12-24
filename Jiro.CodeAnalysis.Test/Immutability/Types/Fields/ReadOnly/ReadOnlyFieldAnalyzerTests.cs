@@ -1,7 +1,7 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.ReadOnly
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.ReadOnly
 {
     using Jiro.CodeAnalysis.Analyzing;
-    using Jiro.CodeAnalysis.Immutability.Types.Fields.ReadOnly.Diagnostics;
+    using Jiro.CodeAnalysis.Immutability.Fields.ReadOnly.Diagnostics;
     using Microsoft.CodeAnalysis;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;

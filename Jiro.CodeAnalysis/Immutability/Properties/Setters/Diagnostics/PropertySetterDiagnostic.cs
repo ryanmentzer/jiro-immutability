@@ -1,4 +1,4 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Properties.Setters.Diagnostics
+﻿namespace Jiro.CodeAnalysis.Immutability.Properties.Setters.Diagnostics
 {
     using Microsoft.CodeAnalysis;
     using System.Collections.Immutable;

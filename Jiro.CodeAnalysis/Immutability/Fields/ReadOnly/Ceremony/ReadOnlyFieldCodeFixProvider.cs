@@ -1,7 +1,7 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.ReadOnly.Ceremony
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.ReadOnly.Ceremony
 {
     using Jiro.CodeAnalysis.Fixing;
-    using Jiro.CodeAnalysis.Immutability.Types.Fields.ReadOnly.Diagnostics;
+    using Jiro.CodeAnalysis.Immutability.Fields.ReadOnly.Diagnostics;
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.CodeFixes;
     using Microsoft.CodeAnalysis.CSharp.Syntax;

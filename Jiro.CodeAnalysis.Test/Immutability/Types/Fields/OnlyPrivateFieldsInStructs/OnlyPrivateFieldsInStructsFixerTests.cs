@@ -1,7 +1,7 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Types.Fields.OnlyPrivateFieldsInStructs
+﻿namespace Jiro.CodeAnalysis.Immutability.Fields.OnlyPrivateFieldsInStructs
 {
     using Jiro.CodeAnalysis.Core;
-    using Jiro.CodeAnalysis.Immutability.Types.Fields.OnlyPrivateFieldsInStructs.Ceremony;
+    using Jiro.CodeAnalysis.Immutability.Fields.OnlyPrivateFieldsInStructs.Ceremony;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Threading.Tasks;
 
