@@ -13,7 +13,7 @@ Fields should have immutable references. Fields are shared state among all membe
 
 ###How to Fix Violations
 
-To fix a violation of this rule, add the [readonly modifier](http://msdn.microsoft.com/en-us/library/acdd6hb7.aspx) to each field.
+The [ReadOnlyFieldFixer](ReadOnlyFieldFixer.cs) will fix this violation by adding the [readonly modifier](http://msdn.microsoft.com/en-us/library/acdd6hb7.aspx) to the field.
 
 ###When to Suppress Warnings
 
