@@ -21,19 +21,11 @@
             this.fixableDiagnosticIds = diagnostics.SelectAsArray(x => x.Id);
         }
 
-        public override ImmutableArray<string> GetFixableDiagnosticIds()
-        {
-            return this.fixableDiagnosticIds;
-        }
+        public override ImmutableArray<string> GetFixableDiagnosticIds() => this.fixableDiagnosticIds;
 
-        public override FixAllProvider GetFixAllProvider()
-        {
-            return WellKnownFixAllProviders.BatchFixer;
-        }
+        public override FixAllProvider GetFixAllProvider() => WellKnownFixAllProviders.BatchFixer;
 
-        public override async Task ComputeFixesAsync(CodeFixContext context)
-        {
-            await this.contextProvider.Create(context).RegisterFix(this.fixer);
-        }
+        public override Task ComputeFixesAsync(CodeFixContext context) => 
+            this.contextProvider.Create(context).RegisterFix(this.fixer);
     }
 }

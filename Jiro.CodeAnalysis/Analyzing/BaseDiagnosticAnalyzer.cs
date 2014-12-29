@@ -4,28 +4,21 @@
     using Microsoft.CodeAnalysis.Diagnostics;
     using System.Collections.Immutable;
 
-    public abstract class BaseDiagnosticAnalyzer<TSymbol> : DiagnosticAnalyzer
+    internal abstract class BaseDiagnosticAnalyzer<TSymbol> : DiagnosticAnalyzer
     {
         private readonly IAnalyzer<TSymbol> analyzer;
-        private readonly ImmutableArray<DiagnosticDescriptor> diagnostics;
 
         internal BaseDiagnosticAnalyzer(IAnalyzer<TSymbol> analyzer, ImmutableArray<DiagnosticDescriptor> diagnostics)
         {
-            this.analyzer = analyzer;
-            this.diagnostics = diagnostics;
+            this.analyzer = Guard.NotNull(analyzer, nameof(analyzer));
+            this.SupportedDiagnostics = diagnostics;
         }
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
         {
-            get
-            {
-                return this.diagnostics;
-            }
+            get;
         }
 
-        public override void Initialize(AnalysisContext context)
-        {
-            this.analyzer.Register(context);
-        }
+        public override void Initialize(AnalysisContext context) => this.analyzer.Register(context);
     }
 }

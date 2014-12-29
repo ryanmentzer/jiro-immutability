@@ -1,26 +1,19 @@
 ﻿namespace Jiro.CodeAnalysis.Fixing
 {
     using Microsoft.CodeAnalysis;
-    using System.Diagnostics;
 
     internal struct FixResult
     {
-        private readonly SyntaxNode node;
-        private readonly string description;
-
         public FixResult()
         {
-            this.node = null;
-            this.description = string.Empty;
+            this.Node = null;
+            this.Description = string.Empty;
         }
 
         internal FixResult(SyntaxNode node, string description)
         {
-            Debug.Assert(node != null, "node must not be null");
-            Debug.Assert(!string.IsNullOrWhiteSpace(description), "description must not be null, empty, or whitespace");
-
-            this.node = node;
-            this.description = description;
+            this.Node = Guard.NotNull(node, nameof(node));
+            this.Description = Guard.NotEmpty(description, nameof(description));
         }
 
         internal static FixResult Empty
@@ -35,24 +28,18 @@
         {
             get
             {
-                return this.node == null;
+                return this.Node == null;
             }
         }
 
         internal SyntaxNode Node
         {
-            get
-            {
-                return this.node;
-            }
+            get;
         }
 
         internal string Description
         {
-            get
-            {
-                return this.description;
-            }
+            get;
         }
     }
 }

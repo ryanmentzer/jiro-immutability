@@ -5,19 +5,15 @@
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.Diagnostics;
     using System;
-    using System.Diagnostics;
 
     internal sealed class UseImmutableCollectionsAnalyzer : IAnalyzer<IFieldSymbol>
     {
-        public void Register(AnalysisContext context)
-        {
-            context.RegisterSymbolAction(this, SymbolKind.Field);
-        }
+        public void Register(AnalysisContext context) => context.RegisterSymbolAction(this, SymbolKind.Field);
 
         public Diagnostic Analyze(IFieldSymbol field)
         {
-            Debug.Assert(field != null, "field must not be null.");
-            Debug.Assert(field.Type != null, "field.Type must not be null.");
+            Guard.NotNull(field, nameof(field));
+            Guard.NotNull(field.Type, nameof(IFieldSymbol.Type));
 
             var type = field.Type;
 
@@ -27,13 +23,10 @@
                 EmptyDiagnostic.Create();
         }
 
-        private static bool FromSystemCollectionsGeneric(ITypeSymbol type)
-        {
-            return 
-                string.Equals(
-                    "System.Collections.Generic", 
-                    type.OriginalDefinition.ContainingNamespace.ToDisplayString(), 
-                    StringComparison.Ordinal);
-        }
+        private static bool FromSystemCollectionsGeneric(ITypeSymbol type) =>
+            string.Equals(
+                "System.Collections.Generic",
+                type.OriginalDefinition.ContainingNamespace.ToDisplayString(),
+                StringComparison.Ordinal);
     }
 }

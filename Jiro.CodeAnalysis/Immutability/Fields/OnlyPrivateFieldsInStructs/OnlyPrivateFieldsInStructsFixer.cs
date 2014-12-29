@@ -18,8 +18,8 @@
         [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Whitespace(System.String,System.Boolean)")]
         public FixResult ApplyFix(FieldDeclarationSyntax field)
         {
-            Debug.Assert(field != null, "field must not be null.");
-            Debug.Assert(field.Parent != null, "field.Parent must not be null.");
+            Guard.NotNull(field, nameof(field));
+            Guard.NotNull(field.Parent, nameof(FieldDeclarationSyntax.Parent));
 
             var @private =
                 SyntaxFactory.Token(

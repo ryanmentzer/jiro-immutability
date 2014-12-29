@@ -4,7 +4,6 @@
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.CSharp;
     using Microsoft.CodeAnalysis.CSharp.Syntax;
-    using System.Diagnostics;
     using System.Globalization;
     using System.Linq;
 
@@ -12,7 +11,7 @@
     {
         public FixResult ApplyFix(PropertyDeclarationSyntax property)
         {
-            Debug.Assert(property != null, "property must not be null.");
+            Guard.NotNull(property, nameof(property));
 
             var result = FixResult.Empty;
 

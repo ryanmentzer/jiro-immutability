@@ -1,4 +1,7 @@
-﻿namespace Jiro.CodeAnalysis.Immutability.Fields.OnlyPrivateFieldsInStructs.Ceremony
+﻿
+
+
+namespace Jiro.CodeAnalysis.Immutability.Fields.OnlyPrivateFieldsInStructs.Ceremony
 {
     using Jiro.CodeAnalysis.Fixing;
     using Jiro.CodeAnalysis.Immutability.Fields.OnlyPrivateFieldsInStructs.Diagnostics;

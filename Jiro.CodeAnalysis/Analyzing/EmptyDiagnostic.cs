@@ -7,14 +7,8 @@
         private static readonly Diagnostic empty =
             Diagnostic.Create(string.Empty, string.Empty, string.Empty, DiagnosticSeverity.Hidden, DiagnosticSeverity.Hidden, false, 0);
 
-        internal static Diagnostic Create()
-        {
-            return empty;
-        }
+        internal static Diagnostic Create() => empty;
 
-        internal static bool IsEmpty(this Diagnostic diagnostic)
-        {
-            return string.IsNullOrEmpty(diagnostic.Id);
-        }
+        internal static bool IsEmpty(this Diagnostic diagnostic) => string.IsNullOrEmpty(diagnostic.Id);
     }
 }

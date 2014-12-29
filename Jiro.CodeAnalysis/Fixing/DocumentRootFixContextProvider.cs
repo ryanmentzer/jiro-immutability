@@ -5,9 +5,6 @@
 
     internal sealed class DocumentRootFixContextProvider : IFixContextProvider
     {
-        public IFixContext Create(CodeFixContext context)
-        {
-            return new DocumentRootFixContext(context, context.Diagnostics.First());
-        }
+        IFixContext IFixContextProvider.Create(CodeFixContext context) => new DocumentRootFixContext(context, context.Diagnostics.First());
     }
 }

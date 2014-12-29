@@ -7,7 +7,7 @@
     {
         internal const string Id = "JIRO-002";
 
-        internal static readonly DiagnosticDescriptor Descriptor =
+        private static readonly DiagnosticDescriptor descriptor =
             new DiagnosticDescriptor(
                 "RCM002", 
                 "Properties should not have setters.", 
@@ -17,6 +17,12 @@
                 true, 
                 helpLink: "http://www.ryanmentzer.com");
 
-        internal static readonly ImmutableArray<DiagnosticDescriptor> Descriptors = ImmutableArray.Create(Descriptor);
+        internal static readonly ImmutableArray<DiagnosticDescriptor> Descriptors = ImmutableArray.Create(descriptor);
+
+        internal static Diagnostic Create(IPropertySymbol property) =>
+            Guard.NotNull(
+                property,
+                nameof(property),
+                () => Diagnostic.Create(descriptor, property.Locations[0], property.Name));
     }
 }

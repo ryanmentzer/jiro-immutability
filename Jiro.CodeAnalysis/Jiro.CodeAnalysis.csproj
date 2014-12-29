@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Analyzing\AnalyzeSymbolExtension.cs" />
+    <Compile Include="Analyzing\ReportDiagnosticExtension.cs" />
+    <Compile Include="Guard.cs" />
     <Compile Include="Fixing\BaseCodeFixProvider.cs" />
     <Compile Include="Analyzing\BaseDiagnosticAnalyzer.cs" />
     <Compile Include="Analyzing\EmptyDiagnostic.cs" />

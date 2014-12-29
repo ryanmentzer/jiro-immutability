@@ -4,7 +4,6 @@
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.CSharp;
     using Microsoft.CodeAnalysis.CSharp.Syntax;
-    using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
 
@@ -13,8 +12,8 @@
         [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Whitespace(System.String,System.Boolean)")]
         public FixResult ApplyFix(FieldDeclarationSyntax field)
         {
-            Debug.Assert(field != null, "field must not be null.");
-            Debug.Assert(field.Parent != null, "field.Parent must not be null.");
+            Guard.NotNull(field, nameof(field));
+            Guard.NotNull(field.Parent, nameof(FieldDeclarationSyntax.Parent));
              
             var readOnly =
                 SyntaxFactory.Token(

@@ -3,7 +3,6 @@
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.CodeActions;
     using Microsoft.CodeAnalysis.CodeFixes;
-    using System.Diagnostics;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -15,12 +14,12 @@
         internal DocumentRootFixContext(CodeFixContext context, Diagnostic diagnostic)
         {
             this.context = context;
-            this.diagnostic = diagnostic;
+            this.diagnostic = Guard.NotNull(diagnostic, nameof(diagnostic));
         }
 
         public async Task RegisterFix<T>(IFixer<T> fixer)
         {
-            Debug.Assert(fixer != null, "fixer must not be null");
+            Guard.NotNull(fixer, nameof(fixer));
 
             var document = this.context.Document;
 

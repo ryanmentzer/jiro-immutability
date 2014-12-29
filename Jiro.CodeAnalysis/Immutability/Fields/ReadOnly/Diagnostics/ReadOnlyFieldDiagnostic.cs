@@ -18,5 +18,11 @@
                 helpLink: "https://github.com/ryanmentzer/Jiro/blob/master/Jiro.CodeAnalysis/Immutability/Fields/ReadOnly/readme.md");
 
         internal static readonly ImmutableArray<DiagnosticDescriptor> Descriptors = ImmutableArray.Create(Descriptor);
+
+        internal static Diagnostic Create(IFieldSymbol field) =>
+            Guard.NotNull(
+                field,
+                nameof(field),
+                () => Diagnostic.Create(Descriptor, field.Locations[0], field.Name));
     }
 }
